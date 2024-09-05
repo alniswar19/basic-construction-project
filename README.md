@@ -1,5 +1,5 @@
 # Getting Started
-
+This basic construction project uses NET Aspire Technology for development, for deployment there is option to deploy using docker-compose by checking the `aspire-manifest.json`
 # Prerequisites
 Ensure you have the following software installed on your system:
 - Docker
@@ -8,7 +8,7 @@ Ensure you have the following software installed on your system:
 # Installation
 *Clone the repository:*
 
-`git clone https://github.com/yourusername/net-aspire.git`
+`git clone https://github.com/alniswar19/basic-construction-project.git`
 
 *Build and Run*
 
