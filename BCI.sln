@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCI.AppHost", "BCI.AppHost\BCI.AppHost.csproj", "{95F68AEC-8C5F-423A-A472-CDB417B76720}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BCI.AppHost", "BCI.AppHost\BCI.AppHost.csproj", "{95F68AEC-8C5F-423A-A472-CDB417B76720}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BCI.ServiceDefaults", "BCI.ServiceDefaults\BCI.ServiceDefaults.csproj", "{3F191945-B6E0-4A75-931E-78662593443D}"
 EndProject
@@ -10,9 +10,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BCI.ApiService", "BCI.ApiSe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BCI.Tests", "BCI.Tests\BCI.Tests.csproj", "{85324766-0242-4092-B685-8DA8B40C1BC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCI.Domain", "..\BCI.Domain\BCI.Domain.csproj", "{299714B4-2938-485D-9856-CD060D3B16D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BCI.Domain", "..\BCI.Domain\BCI.Domain.csproj", "{299714B4-2938-485D-9856-CD060D3B16D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCI.Infrastructure", "..\BCI.Infrastructure\BCI.Infrastructure.csproj", "{B4F1B9DF-78CC-4760-82C3-1C1FAF896863}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BCI.Infrastructure", "..\BCI.Infrastructure\BCI.Infrastructure.csproj", "{B4F1B9DF-78CC-4760-82C3-1C1FAF896863}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BCIDB", "BCIDB\BCIDB.sqlproj", "{2701A12C-C34A-4496-8B44-37201B73E65C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +46,12 @@ Global
 		{B4F1B9DF-78CC-4760-82C3-1C1FAF896863}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4F1B9DF-78CC-4760-82C3-1C1FAF896863}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4F1B9DF-78CC-4760-82C3-1C1FAF896863}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2701A12C-C34A-4496-8B44-37201B73E65C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2701A12C-C34A-4496-8B44-37201B73E65C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2701A12C-C34A-4496-8B44-37201B73E65C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2701A12C-C34A-4496-8B44-37201B73E65C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2701A12C-C34A-4496-8B44-37201B73E65C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2701A12C-C34A-4496-8B44-37201B73E65C}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

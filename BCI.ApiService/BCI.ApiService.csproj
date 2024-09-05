@@ -4,12 +4,15 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <UserSecretsId>e7d61039-052f-47ec-93d8-309d6ed50428</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Aspire.Microsoft.Data.SqlClient" Version="8.2.0" />
+    <PackageReference Include="Dapper.FluentMap" Version="2.0.0" />
     <PackageReference Include="Microsoft.OpenApi" Version="1.6.19" />
     <PackageReference Include="MinimalApis.Extensions" Version="0.11.0" />
+    <PackageReference Include="MiniValidation" Version="0.9.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.7.3" />
   </ItemGroup>
 
@@ -17,5 +20,7 @@
     <ProjectReference Include="..\..\BCI.Infrastructure\BCI.Infrastructure.csproj" />
     <ProjectReference Include="..\BCI.ServiceDefaults\BCI.ServiceDefaults.csproj" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1development_1json__JsonSchema="https://www.updatecli.io/schema/latest/policy/manifest/config.json" /></VisualStudio></ProjectExtensions>
 
 </Project>

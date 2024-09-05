@@ -20,4 +20,13 @@
     <PackageReference Include="Aspire.Hosting.SqlServer" Version="8.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="sql-server\configure-db.sh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="sql-server\entrypoint.sh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

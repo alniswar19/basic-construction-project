@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json.schemastore.org/aspire-8.0.json",
+  "resources": {
+    "cache": {
+      "type": "container.v0",
+      "connectionString": "{cache.bindings.tcp.host}:{cache.bindings.tcp.port}",
+      "image": "docker.io/library/redis:7.2",
+      "bindings": {
+        "tcp": {
+          "scheme": "tcp",
+          "protocol": "tcp",
+          "transport": "tcp",
+          "targetPort": 6379
+        }
+      }
+    },
+    "dbServer-password": {
+      "type": "parameter.v0",
+      "value": "{dbServer-password.inputs.value}",
+      "inputs": {
+        "value": {
+          "type": "string",
+          "secret": true
+        }
+      }
+    },
+    "dbServer": {
+      "type": "container.v0",
+      "connectionString": "Server={dbServer.bindings.tcp.host},{dbServer.bindings.tcp.port};User ID=sa;Password={dbServer-password.value};TrustServerCertificate=true",
+      "image": "mcr.microsoft.com/mssql/server:2022-latest",
+      "entrypoint": "/usr/config/entrypoint.sh",
+      "bindMounts": [
+        {
+          "source": "BCI.AppHost/sql-server",
+          "target": "/usr/config",
+          "readOnly": false
+        },
+        {
+          "source": "BCI.Database/build",
+          "target": "/docker-entrypoint-initdb.d",
+          "readOnly": false
+        }
+      ],
+      "volumes": [
+        {
+          "name": "BciDataVolume",
+          "target": "/var/opt/mssql",
+          "readOnly": false
+        }
+      ],
+      "env": {
+        "ACCEPT_EULA": "Y",
+        "MSSQL_SA_PASSWORD": "{dbServer-password.value}"
+      },
+      "bindings": {
+        "tcp": {
+          "scheme": "tcp",
+          "protocol": "tcp",
+          "transport": "tcp",
+          "port": 4113,
+          "targetPort": 1433
+        }
+      }
+    },
+    "bciDb": {
+      "type": "value.v0",
+      "connectionString": "{dbServer.connectionString};Database=bciDb"
+    },
+    "apiservice": {
+      "type": "project.v0",
+      "path": "BCI.ApiService/BCI.ApiService.csproj",
+      "env": {
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_RETRY": "in_memory",
+        "ASPNETCORE_FORWARDEDHEADERS_ENABLED": "true",
+        "HTTP_PORTS": "{apiservice.bindings.http.targetPort}",
+        "ConnectionStrings__dbServer": "{dbServer.connectionString}",
+        "ConnectionStrings__cache": "{cache.connectionString}"
+      },
+      "bindings": {
+        "http": {
+          "scheme": "http",
+          "protocol": "tcp",
+          "transport": "http"
+        },
+        "https": {
+          "scheme": "https",
+          "protocol": "tcp",
+          "transport": "http"
+        }
+      }
+    }
+  }
+}
