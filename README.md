@@ -1,3 +1,5 @@
+![Alt](https://repobeats.axiom.co/api/embed/764976f1adb7fc33280efe4df3cf4ed4492cfcdd.svg "Repobeats analytics image")
+
 # Getting Started
 This basic construction project uses NET Aspire Technology for development, for deployment there is option to deploy using docker-compose by checking the `aspire-manifest.json`
 # Prerequisites
