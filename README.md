@@ -2,7 +2,7 @@
 
 # Getting Started
 This basic construction project uses NET Aspire Technology for development, for deployment there is option to deploy using docker-compose by checking the `aspire-manifest.json`
-test
+testing
 # Prerequisites
 Ensure you have the following software installed on your system:
 - Docker
